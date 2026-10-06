@@ -1802,3 +1802,206 @@ button {
   .df-chat-launcher { padding: 9px; }
   .df-chat-panel { right: 0; bottom: 0; width: 100%; height: min(720px, 100dvh); border-radius: 20px 20px 0 0; }
 }
+
+/* ============================================================
+   DairyFed App Download CTA
+   ============================================================ */
+.dairyfed-app-download {
+  position: fixed;
+  right: 24px;
+  bottom: 88px;
+  z-index: 690;
+  font-family: var(--font-body);
+  pointer-events: auto;
+  animation: df-app-cta-entrance 0.5s var(--ease) both;
+}
+
+@keyframes df-app-cta-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.df-app-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 9px;
+  background: var(--navy);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(7, 26, 51, 0.24), 0 0 0 4px rgba(58, 125, 68, 0.12);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease);
+  outline: none;
+  user-select: none;
+  min-height: 44px;
+}
+
+.df-app-cta:hover {
+  transform: translateY(-3px);
+  background: #0d2c52;
+  border-color: rgba(229, 193, 88, 0.4);
+  box-shadow: 0 16px 36px rgba(7, 26, 51, 0.32), 0 0 0 6px rgba(58, 125, 68, 0.18);
+  color: #ffffff;
+}
+
+.df-app-cta:focus-visible {
+  outline: 3px solid var(--c-gov);
+  outline-offset: 3px;
+  box-shadow: 0 12px 32px rgba(7, 26, 51, 0.35);
+}
+
+.df-app-cta:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.df-app-cta__icon-wrapper {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green);
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+
+.df-app-cta:hover .df-app-cta__icon-wrapper {
+  background: #2f6837;
+  transform: scale(1.06);
+}
+
+.df-app-cta__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.df-app-cta__pulse {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(58, 125, 68, 0.4);
+  animation: df-app-pulse 3s infinite var(--ease);
+  pointer-events: none;
+}
+
+@keyframes df-app-pulse {
+  0%, 65%, 100% { opacity: 0; transform: scale(1); }
+  20% { opacity: 0.8; }
+  50% { opacity: 0; transform: scale(1.3); }
+}
+
+.df-app-cta__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.df-app-cta__label {
+  font-family: var(--font-head);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  display: block;
+}
+
+.df-app-cta__hover-label {
+  font-family: var(--font-head);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+  display: none;
+}
+
+.df-app-cta__sub {
+  font-size: 0.66rem;
+  font-weight: 600;
+  color: var(--c-gov);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
+.df-app-cta__arrow {
+  display: grid;
+  place-items: center;
+  color: var(--c-gov);
+  margin-left: 2px;
+  opacity: 0.7;
+  transition: transform 0.2s var(--ease), opacity 0.2s var(--ease);
+}
+
+@media (min-width: 641px) {
+  .df-app-cta:hover .df-app-cta__label {
+    display: none;
+  }
+  .df-app-cta:hover .df-app-cta__hover-label {
+    display: block;
+  }
+  .df-app-cta:hover .df-app-cta__arrow {
+    opacity: 1;
+    transform: translateY(2px);
+  }
+}
+
+@media (max-width: 640px) {
+  .dairyfed-app-download {
+    right: 16px;
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+  .df-app-cta {
+    padding: 7px 14px 7px 8px;
+    min-height: 44px;
+    gap: 8px;
+  }
+  .df-app-cta__icon-wrapper {
+    width: 30px;
+    height: 30px;
+  }
+  .df-app-cta__icon {
+    width: 16px;
+    height: 16px;
+  }
+  .df-app-cta__label {
+    font-size: 0.8rem;
+  }
+  .df-app-cta__sub {
+    font-size: 0.62rem;
+  }
+  .df-app-cta__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .df-app-cta__sub {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dairyfed-app-download,
+  .df-app-cta,
+  .df-app-cta__icon-wrapper,
+  .df-app-cta__arrow {
+    animation: none !important;
+    transition: none !important;
+  }
+  .df-app-cta__pulse {
+    display: none;
+  }
+}
+

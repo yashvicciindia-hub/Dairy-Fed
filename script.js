@@ -419,4 +419,15 @@
     }
     loadNext(0);
   })();
+
+  /* ============================================================
+     DairyFed Android App Download CTA: load shared CTA module
+     ============================================================ */
+  (function loadDairyFedAppCTA() {
+    var base = page === "home" ? "" : "../";
+    var script = document.createElement("script");
+    script.src = base + "dairyfedAppDownload.js";
+    document.body.appendChild(script);
+  })();
 })();
+
