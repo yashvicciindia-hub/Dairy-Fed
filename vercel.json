@@ -1,25 +1,24 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" }
-      ]
-    }
-  ],
   "rewrites": [
-    { "source": "/problem",    "destination": "/problem/index.html" },
-    { "source": "/platform",   "destination": "/platform/index.html" },
-    { "source": "/experiences","destination": "/experiences/index.html" },
-    { "source": "/modules",    "destination": "/modules/index.html" },
-    { "source": "/roadmap",    "destination": "/roadmap/index.html" },
-    { "source": "/impact",     "destination": "/impact/index.html" },
-    { "source": "/business",   "destination": "/business/index.html" },
-    { "source": "/growth",     "destination": "/growth/index.html" },
-    { "source": "/investment", "destination": "/investment/index.html" },
-    { "source": "/contact",    "destination": "/contact/index.html" }
+    { "source": "/problem",     "destination": "/problem/index.html" },
+    { "source": "/problem/",    "destination": "/problem/index.html" },
+    { "source": "/platform",    "destination": "/platform/index.html" },
+    { "source": "/platform/",   "destination": "/platform/index.html" },
+    { "source": "/experiences", "destination": "/experiences/index.html" },
+    { "source": "/experiences/","destination": "/experiences/index.html" },
+    { "source": "/modules",     "destination": "/modules/index.html" },
+    { "source": "/modules/",    "destination": "/modules/index.html" },
+    { "source": "/roadmap",     "destination": "/roadmap/index.html" },
+    { "source": "/roadmap/",    "destination": "/roadmap/index.html" },
+    { "source": "/impact",      "destination": "/impact/index.html" },
+    { "source": "/impact/",     "destination": "/impact/index.html" },
+    { "source": "/business",    "destination": "/business/index.html" },
+    { "source": "/business/",   "destination": "/business/index.html" },
+    { "source": "/growth",      "destination": "/growth/index.html" },
+    { "source": "/growth/",     "destination": "/growth/index.html" },
+    { "source": "/investment",  "destination": "/investment/index.html" },
+    { "source": "/investment/", "destination": "/investment/index.html" },
+    { "source": "/contact",     "destination": "/contact/index.html" },
+    { "source": "/contact/",    "destination": "/contact/index.html" }
   ]
 }
